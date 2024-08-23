@@ -7,7 +7,7 @@ from datetime import datetime, time
 import time
 from GPTCall import ask_chatgpt
 from SaveExcel_v2 import update_sheet_preserving_format, update_list_sheets_preserving_format
-mypath="/Users/mathangikarunakaran/Documents/VU-NMIT/2ndYear/ResearchThesis1_NEF6101/UpdatedCode/Cognitive map graph python program/"
+mypath="C:/Users/Chhayseng/Desktop/codebase-advancedproject/Cognitive map graph python program/"
 process_knowledge_filename="CMG_article_process_knowledge.xlsx"
 process_knowledge_file_fullpath=mypath+process_knowledge_filename
 
@@ -48,7 +48,7 @@ def main():
     print ("main function started \n--------------------")
     time_started=time.time()
 
-    myexcelfile=mypath+'Cognitive Map Graph Processing v3 2024.05.15.xlsx'      
+    myexcelfile=mypath+'Cognitive Map Graph Processing v1 2024.08.14.xlsx'      
     #check_excelfile_info(myexcelfile)
     
     df_sentences = pd.read_excel(myexcelfile, sheet_name='sentences')
