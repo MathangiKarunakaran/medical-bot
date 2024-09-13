@@ -1,3 +1,5 @@
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import json, os, config, re, time
 import pandas as pd
 from GPTCall import ask_gpt 
