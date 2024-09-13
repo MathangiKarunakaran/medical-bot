@@ -1,7 +1,7 @@
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
-import time, config
+import os, time, config
 from GPTCall import ask_gpt
 from SaveExcel_v2 import update_sheet_preserving_format
 
@@ -91,6 +91,8 @@ def convertsentence_toCMG(df_sentences,row_start, row_end ):
                     df_sentences.at[index, 'processed'] = 'No'
                 else:
                     df_sentences.at[index, 'CMG Auto with GPT'] = response_text
+                    df_sentences.at[index, 'processing user'] = os.getlogin()
+                    df_sentences.at[index, 'processing date'] = pd.Timestamp.now().strftime("%d/%m/%Y %H:%M:%S")
                     df_sentences.at[index, 'processed'] = 'Yes'                
         else:
             break     
